@@ -57,6 +57,9 @@
 #if __has_include("epd3c/GxEPD2_213c.h")
 #include "epd3c/GxEPD2_213c.h"
 #endif
+#if __has_include("epd3c/GxEPD2_213_my.h")
+#include "epd3c/GxEPD2_213_my.h"
+#endif
 #if __has_include("epd3c/GxEPD2_213_Z19c.h")
 #include "epd3c/GxEPD2_213_Z19c.h"
 #endif
@@ -627,6 +630,10 @@ class GxEPD2_3C : public GxEPD2_GFX_BASE_CLASS
     void hibernate()
     {
       epd2.hibernate();
+    }
+    void setBorder(uint16_t color)
+    {
+      epd2.setBorder(color);
     }
   private:
     template <typename T> static inline void
